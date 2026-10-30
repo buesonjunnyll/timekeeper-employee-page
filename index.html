@@ -215,9 +215,255 @@ header .header-clock .clock-time{font-size:12px;font-weight:750;color:#fff}
 #employee .camera-layout #preview{width:100%;max-width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 #employee .camera-controls #startCamera{display:block!important;visibility:visible!important}
 </style>
+
+<style id="south-oil-login-inspired-employee-ui">
+:root {
+  --so-navy:#06152f;
+  --so-deep:#020a1b;
+  --so-blue:#167be8;
+  --so-cyan:#19d5ef;
+  --so-pink:#f00078;
+  --so-white:#f4f8ff;
+  --so-muted:#aebed7;
+  font-family:Inter,"Segoe UI",Arial,sans-serif;
+}
+html,body {min-height:100%; background:#030d21!important; color:var(--so-white)!important;}
+body {
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 18% 12%,rgba(0,112,255,.22),transparent 38%),
+    radial-gradient(ellipse at 85% 80%,rgba(240,0,120,.13),transparent 35%),
+    linear-gradient(135deg,#020817 0%,#071a3b 52%,#020817 100%)!important;
+  background-attachment:fixed!important;
+}
+body:before {
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:linear-gradient(115deg,transparent 0 43%,rgba(20,130,255,.045) 50%,transparent 57%),
+             radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.32) 100%);
+}
+header,main,.footer,#hrLoginModal {position:relative;z-index:1}
+header {
+  min-height:88px!important;height:auto!important;
+  padding:14px clamp(16px,4vw,48px)!important;
+  background:rgba(3,13,34,.88)!important;
+  border-bottom:1px solid rgba(104,167,255,.22)!important;
+  box-shadow:0 10px 34px rgba(0,0,0,.24)!important;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:18px!important;
+}
+header .brand-wrap{display:flex!important;align-items:center!important;gap:13px!important;min-width:0}
+header .brand-logo {
+  width:48px!important;height:48px!important;flex:0 0 48px!important;
+  border-radius:14px!important;padding:8px!important;
+  color:#fff!important;background:linear-gradient(145deg,#0c3d78,#07152e)!important;
+  border:1px solid rgba(89,178,255,.55)!important;
+  filter:drop-shadow(0 0 12px rgba(0,151,255,.22))!important;
+}
+header h1{font-size:clamp(20px,2vw,27px)!important;letter-spacing:.07em!important;font-weight:850!important;color:#fff!important;margin:0!important}
+header p{font-size:11px!important;letter-spacing:.19em!important;text-transform:uppercase;color:#b9cce9!important;margin:5px 0 0!important}
+header .header-clock{color:#fff!important;text-align:right!important}
+header .header-clock .clock-date{font-size:12px!important;color:#a9bddb!important}
+header .header-clock .clock-time{font-size:19px!important;font-weight:750!important;color:#fff!important;text-shadow:0 0 14px rgba(0,177,255,.3)}
+.wrap{width:min(1280px,100%)!important;max-width:1280px!important;padding:clamp(18px,3vw,38px)!important;margin:0 auto!important}
+#employee .grid{grid-template-columns:minmax(260px,.85fr) minmax(380px,1.15fr)!important;gap:20px!important;align-items:stretch!important}
+#employee .card,.card,.panel {
+  color:#f2f6ff!important;
+  background:linear-gradient(145deg,rgba(12,34,70,.94),rgba(4,17,42,.96))!important;
+  border:1px solid rgba(112,166,230,.28)!important;
+  border-radius:16px!important;
+  box-shadow:0 18px 44px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.045)!important;
+  padding:clamp(17px,2vw,25px)!important;
+}
+#employee .card h2,.card h2,.panel h2{color:#fff!important;font-size:19px!important;font-weight:750!important;letter-spacing:.01em}
+#employee .muted,.muted{color:#aebed7!important;font-size:13px!important;line-height:1.6!important}
+#employee .note{background:rgba(16,61,104,.42)!important;border-left:3px solid var(--so-cyan)!important;color:#d8eaff!important;border-radius:8px!important}
+.reminder-list{color:#d3def0!important;font-size:13px!important;line-height:1.7!important}
+.reminder-list li{margin:7px 0!important}
+.reminder-foot{border-top:1px solid rgba(150,185,230,.18)!important;color:#9db1d0!important}
+.field label,#employee .field label{color:#e6efff!important;font-size:13px!important;font-weight:700!important}
+.field input,.field select,#employee .field input,#employee .field select,
+.toolbar input,.toolbar select,textarea {
+  width:100%;min-height:44px!important;padding:11px 13px!important;
+  color:#fff!important;background:rgba(1,10,27,.68)!important;
+  border:1px solid rgba(133,177,230,.38)!important;border-radius:9px!important;
+  font:inherit!important;outline:none!important;box-shadow:none!important;
+}
+.field input::placeholder,#employee .field input::placeholder{color:#8095b5!important}
+.field input:focus,.field select:focus,#employee .field input:focus,#employee .field select:focus {
+  border-color:#29b9ff!important;box-shadow:0 0 0 3px rgba(20,155,255,.15)!important;
+}
+.btn,#employee .btn {
+  border:1px solid rgba(117,190,255,.42)!important;border-radius:9px!important;
+  background:linear-gradient(105deg,#168fe9,#164bb6)!important;color:#fff!important;
+  padding:11px 16px!important;min-height:42px!important;font-size:13px!important;
+  font-weight:750!important;box-shadow:0 7px 18px rgba(0,88,190,.19)!important;
+  transition:filter .15s ease,transform .15s ease!important;
+}
+.btn:hover:not(:disabled){filter:brightness(1.12)!important;transform:translateY(-1px)}
+.btn.secondary,#employee .btn.secondary {
+  color:#e8f1ff!important;background:rgba(27,52,88,.78)!important;
+  border:1px solid rgba(135,172,220,.3)!important;box-shadow:none!important;
+}
+.btn.danger{background:linear-gradient(105deg,#b42348,#861c42)!important}
+.btn:disabled{opacity:.42!important;filter:grayscale(.25)}
+.camera,#employee .camera {
+  background:#020817!important;border:1px solid rgba(95,164,235,.35)!important;
+  border-radius:12px!important;box-shadow:0 8px 24px rgba(0,0,0,.22)!important;
+}
+.camera-layout{gap:12px!important}
+.camera-controls .btn{min-height:42px!important}
+.status,#employee .status {
+  color:#d7e8ff!important;background:rgba(15,43,80,.72)!important;
+  border:1px solid rgba(116,165,220,.2)!important;border-radius:8px!important;
+  padding:10px 12px!important;font-size:12px!important;
+}
+.status.ok{background:rgba(18,93,66,.36)!important;color:#baf5d5!important;border-color:rgba(75,210,151,.3)!important}
+.status.err{background:rgba(125,29,43,.35)!important;color:#ffd0d4!important;border-color:rgba(255,112,127,.3)!important}
+#submissionSuccess {
+  color:#f4f8ff!important;background:linear-gradient(145deg,rgba(12,34,70,.97),rgba(4,17,42,.98))!important;
+  border:1px solid rgba(112,166,230,.3)!important;border-radius:16px!important;
+  box-shadow:0 18px 44px rgba(0,0,0,.28)!important;
+}
+#submissionSuccess h2{color:#fff!important}
+#submissionSuccess p{color:#b9c9e2!important}
+#hrLoginModal{background:rgba(0,5,17,.78)!important;backdrop-filter:blur(12px)}
+#hrLoginModal [role=dialog]{
+  color:#f4f8ff!important;background:linear-gradient(145deg,#102b54,#06152f)!important;
+  border:1px solid rgba(112,166,230,.35)!important;border-radius:16px!important;
+  box-shadow:0 22px 60px rgba(0,0,0,.5)!important;
+}
+#hrLoginModal h2{color:#fff!important}
+#hrLoginModal .muted,#hrLoginModal .small{color:#aebed7!important}
+.footer{color:#8299ba!important}
+@media(max-width:760px){
+  header{min-height:72px!important;padding:12px 14px!important}
+  header .brand-logo{width:40px!important;height:40px!important;flex-basis:40px!important}
+  header h1{font-size:19px!important}
+  header p{font-size:9px!important;letter-spacing:.12em!important}
+  header .header-clock .clock-date{font-size:9px!important}
+  header .header-clock .clock-time{font-size:15px!important}
+  .wrap{padding:14px 12px 24px!important}
+  #employee .grid{grid-template-columns:1fr!important;gap:13px!important}
+  #employee .card{padding:16px!important}
+}
+@media(max-width:430px){
+  header{gap:8px!important}
+  header .brand-wrap{gap:8px!important}
+  header .brand-logo{width:34px!important;height:34px!important;flex-basis:34px!important}
+  header h1{font-size:16px!important}
+  header p{font-size:8px!important}
+  header .header-clock .clock-date{font-size:8px!important}
+  header .header-clock .clock-time{font-size:13px!important}
+  .camera-layout{grid-template-columns:minmax(0,1fr)!important}
+  .camera-controls{display:grid!important;grid-template-columns:1fr 1fr!important}
+}
+</style>
+
+
+<style id="south-oil-station-background-transparent-panels">
+/* Reuse the existing SOUTH OIL station artwork; no new image is generated. */
+html, body {
+  min-height:100% !important;
+  background:#020918 !important;
+}
+body {
+  position:relative !important;
+  background-image:
+    linear-gradient(110deg,rgba(1,8,24,.48),rgba(2,12,34,.36) 48%,rgba(1,8,24,.50)),
+    url("SouthOil-Station-Background-Clean.png") !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed !important;
+}
+body:before {
+  background:linear-gradient(115deg,rgba(0,7,22,.18),rgba(0,13,35,.12) 50%,rgba(0,5,18,.28)) !important;
+}
+/* Main cards become translucent glass instead of opaque navy blocks. */
+#employee .card,
+.card,
+.panel {
+  background:rgba(3,16,42,.53) !important;
+  border:1px solid rgba(190,220,255,.25) !important;
+  box-shadow:0 14px 38px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.07) !important;
+  backdrop-filter:blur(5px) !important;
+  -webkit-backdrop-filter:blur(5px) !important;
+}
+/* Reminder rows: remove the bright white rectangles seen in the screenshot. */
+.reminder-list li {
+  background:rgba(8,35,72,.38) !important;
+  color:#e3edff !important;
+  border:1px solid rgba(178,211,255,.13) !important;
+  border-radius:9px !important;
+  backdrop-filter:blur(3px) !important;
+  -webkit-backdrop-filter:blur(3px) !important;
+}
+.reminder-list li:before {
+  background:rgba(170,205,245,.16) !important;
+  color:#eaf4ff !important;
+}
+#employee .note {
+  background:rgba(7,47,84,.48) !important;
+  border:1px solid rgba(25,213,239,.25) !important;
+  border-left:3px solid #19d5ef !important;
+}
+#employee .reminder-foot {
+  border-top:1px solid rgba(190,220,255,.18) !important;
+  color:#b9cbe5 !important;
+}
+#employee .card h2 {color:#fff !important}
+#employee .muted {color:#c0d0e8 !important}
+/* Keep form fields readable while allowing the station to show through the cards. */
+.field input,#employee .field input,
+.field select,#employee .field select,
+.toolbar input,.toolbar select,textarea {
+  background:rgba(1,9,25,.60) !important;
+  border-color:rgba(174,207,248,.36) !important;
+  color:#fff !important;
+}
+.status,#employee .status {
+  background:rgba(9,35,70,.58) !important;
+  border-color:rgba(170,205,245,.20) !important;
+}
+#submissionSuccess {
+  background:rgba(3,16,42,.72) !important;
+  backdrop-filter:blur(7px) !important;
+  -webkit-backdrop-filter:blur(7px) !important;
+}
+@media(max-width:760px) {
+  body {background-attachment:scroll !important;background-position:center center !important}
+}
+</style>
+
+
+<style id="south-oil-header-wordmark-update">
+header .brand-wrap{gap:13px!important}
+header h1{
+  white-space:nowrap!important;
+  font-size:clamp(16px,1.75vw,24px)!important;
+  letter-spacing:.045em!important;
+  font-weight:850!important;
+  line-height:1.15!important;
+}
+header h1 .brand-oil{color:#f00078!important}
+header p{
+  display:block!important;
+  color:#d7e5fb!important;
+  font-size:10px!important;
+  letter-spacing:.19em!important;
+  text-transform:uppercase!important;
+  margin-top:5px!important;
+}
+@media(max-width:760px){
+  header h1{font-size:clamp(13px,3.2vw,19px)!important;letter-spacing:.025em!important}
+  header p{font-size:8px!important;letter-spacing:.11em!important}
+}
+</style>
+
 </head>
 <body>
-<header><div class="brand-wrap"><svg class="brand-logo" viewBox="0 0 40 40" role="img" aria-label="South Oil timekeeper logo" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h8M20 4v4M29.7 10.3l2.2-2.2"/><circle cx="20" cy="22" r="13.2"/><path d="M20 13.8v8.7l5.5 3.1"/><path d="M12.8 9.8l-2-2"/></g><circle cx="20" cy="22" r="1.6" fill="currentColor"/></svg><div><h1>SOUTH OIL</h1><p>Employee Attendance System</p></div></div><div class="header-clock" aria-live="off"><div id="headerDate" class="clock-date"></div><div id="headerTime" class="clock-time"></div></div></header>
+<header><div class="brand-wrap"><svg class="brand-logo" viewBox="0 0 40 40" role="img" aria-label="South Oil timekeeper logo" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h8M20 4v4M29.7 10.3l2.2-2.2"/><circle cx="20" cy="22" r="13.2"/><path d="M20 13.8v8.7l5.5 3.1"/><path d="M12.8 9.8l-2-2"/></g><circle cx="20" cy="22" r="1.6" fill="currentColor"/></svg><div><h1>SOUTH <span class="brand-oil">OIL</span> CORPORATION</h1><p>Employee Attendance System</p></div></div><div class="header-clock" aria-live="off"><div id="headerDate" class="clock-date"></div><div id="headerTime" class="clock-time"></div></div></header>
 
 <main class="wrap">
 <section id="employee" class="panel active"><div class="grid">
@@ -388,6 +634,10 @@ $('submit').onclick=async()=>{
     const data=await res.json().catch(()=>({detail:'Unexpected response from relay.'}));
     if(!res.ok)throw Error(data.detail||'HTTP '+res.status);
     localStorage.removeItem(PENDING_KEY);activeSubmissionUid=null;
+    // Release the previous camera session after a successful submission.
+    if(stream){stream.getTracks().forEach(track=>track.stop());stream=null;}
+    const cameraVideo=$('video');
+    if(cameraVideo){cameraVideo.pause();cameraVideo.srcObject=null;}
     // Show a dedicated confirmation screen only after the relay confirms success.
     $('employee').hidden=true;
     $('submissionSuccess').hidden=false;
@@ -412,15 +662,27 @@ $('submitAgain').onclick=()=>{
   $('employee').hidden=false;
   $('employeeId').value='';
   $('eventType').value='CHECK_IN';
+
+  // Clear all data and release any stale camera stream before starting again.
   photoData=null;currentLoc=null;
+  if(stream){stream.getTracks().forEach(track=>track.stop());stream=null;}
+  const video=$('video');
+  if(video){video.pause();video.srcObject=null;video.style.display='block';video.hidden=false;}
   const img=$('preview');if(img)img.style.display='none';
-  if(stream){$('video').style.display='block';$('capture').disabled=false;$('startCamera').textContent='Camera ready';$('startCamera').disabled=true;}
-  else{$('video').style.display='block';$('capture').disabled=true;$('startCamera').textContent='Open camera';$('startCamera').disabled=false;}
+
+  $('capture').disabled=true;
   $('retake').disabled=true;
-  setStatus('photoStatus',stream?'Camera ready. Check your framing, then tap Capture selfie.':'Open the camera to begin.');
+  $('startCamera').textContent='Open camera';
+  $('startCamera').disabled=false;
+  $('getLocation').disabled=false;
+
+  setStatus('photoStatus','Starting a fresh camera session…');
   setStatus('locationStatus','Check your location to continue.');
   setStatus('submitStatus','Complete employee ID, selfie, and a valid location first.');
   updateSubmit();
+
+  // The click is a user gesture, so request a new live camera stream immediately.
+  $('startCamera').click();
   window.scrollTo({top:0,behavior:'smooth'});
 };
 $('employeeId').oninput=updateSubmit;
