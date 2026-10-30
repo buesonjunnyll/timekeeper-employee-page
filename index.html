@@ -461,6 +461,32 @@ header p{
 }
 </style>
 
+
+<style id="south-oil-mobile-check-location-nowrap">
+/* Keep Check location on one line on narrow mobile screens. */
+#employee .card:nth-child(2) .camera-controls #getLocation {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  min-width: 0 !important;
+}
+@media (max-width: 600px) {
+  #employee .card:nth-child(2) .camera-controls #getLocation {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-height: 40px !important;
+    padding: 8px 12px !important;
+    white-space: nowrap !important;
+    font-size: 12px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header><div class="brand-wrap"><svg class="brand-logo" viewBox="0 0 40 40" role="img" aria-label="South Oil timekeeper logo" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h8M20 4v4M29.7 10.3l2.2-2.2"/><circle cx="20" cy="22" r="13.2"/><path d="M20 13.8v8.7l5.5 3.1"/><path d="M12.8 9.8l-2-2"/></g><circle cx="20" cy="22" r="1.6" fill="currentColor"/></svg><div><h1>SOUTH <span class="brand-oil">OIL</span> CORPORATION</h1><p>Employee Attendance System</p></div></div><div class="header-clock" aria-live="off"><div id="headerDate" class="clock-date"></div><div id="headerTime" class="clock-time"></div></div></header>
